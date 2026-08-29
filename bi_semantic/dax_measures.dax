@@ -1,0 +1,171 @@
+// ============================================================================
+// TALENT ACQUISITION & FUNNEL INTELLIGENCE SUITE: 25+ ENTERPRISE DAX MEASURES
+// Optimized for Power BI VertiPaq Columnar Storage Engine & Dynamic Filter Context
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// 1. CORE VOLUME MEASURES
+// ----------------------------------------------------------------------------
+
+[Total Applications] = 
+COUNTROWS('fact_applications')
+
+[Total Candidates Screened] = 
+DISTINCTCOUNT('fact_applications'[candidate_id])
+
+[Active Job Requisitions] = 
+CALCULATE(
+    COUNTROWS('fact_job_postings'),
+    'fact_job_postings'[is_closed] = 0
+)
+
+[Total Closed Requisitions] = 
+CALCULATE(
+    COUNTROWS('fact_job_postings'),
+    'fact_job_postings'[is_closed] = 1
+)
+
+[Total Technical Interviews] = 
+CALCULATE(
+    COUNTROWS('fact_applications'),
+    'fact_applications'[is_interviewed] = 1
+)
+
+[Total Job Offers Extended] = 
+CALCULATE(
+    COUNTROWS('fact_applications'),
+    'fact_applications'[is_offered] = 1
+)
+
+[Total Successful Hires] = 
+CALCULATE(
+    COUNTROWS('fact_applications'),
+    'fact_applications'[is_hired] = 1
+)
+
+
+// ----------------------------------------------------------------------------
+// 2. FUNNEL CONVERSION & YIELD RATIOS
+// ----------------------------------------------------------------------------
+
+[Application-to-Interview Rate %] = 
+DIVIDE(
+    [Total Technical Interviews],
+    [Total Applications],
+    0.0
+) * 100
+
+[Interview-to-Offer Yield %] = 
+DIVIDE(
+    [Total Job Offers Extended],
+    [Total Technical Interviews],
+    0.0
+) * 100
+
+[Offer Acceptance Rate %] = 
+DIVIDE(
+    [Total Successful Hires],
+    [Total Job Offers Extended],
+    0.0
+) * 100
+
+[End-to-End Placement Rate %] = 
+DIVIDE(
+    [Total Successful Hires],
+    [Total Applications],
+    0.0
+) * 100
+
+[Triage Disqualification Rate %] = 
+VAR AutoRejected = CALCULATE(COUNTROWS('fact_applications'), 'fact_applications'[triage_category] = "AUTO_REJECT")
+RETURN
+DIVIDE(AutoRejected, [Total Applications], 0.0) * 100
+
+[Human Review Pipeline %] = 
+VAR FlaggedApps = CALCULATE(COUNTROWS('fact_applications'), 'fact_applications'[triage_category] = "HUMAN_REVIEW_FLAGGED")
+RETURN
+DIVIDE(FlaggedApps, [Total Applications], 0.0) * 100
+
+[Direct Applicable Fast-Track %] = 
+VAR DirectApps = CALCULATE(COUNTROWS('fact_applications'), 'fact_applications'[triage_category] = "DIRECT_APPLICABLE")
+RETURN
+DIVIDE(DirectApps, [Total Applications], 0.0) * 100
+
+
+// ----------------------------------------------------------------------------
+// 3. SCORING, MATCH QUALITY & SECURITY METRICS
+// ----------------------------------------------------------------------------
+
+[Average Composite Match Score] = 
+AVERAGE('fact_applications'[composite_match_score])
+
+[Average Hard Skills Jaccard] = 
+AVERAGE('fact_applications'[hard_skills_jaccard]) * 100
+
+[Average Semantic Similarity Cosine] = 
+AVERAGE('fact_applications'[semantic_cosine_sim]) * 100
+
+[High Match Quality Applications] = 
+CALCULATE(
+    COUNTROWS('fact_applications'),
+    'fact_applications'[composite_match_score] >= 80.0
+)
+
+[Prompt Injection Attacks Neutralized] = 
+CALCULATE(
+    COUNTROWS('fact_applications'),
+    'fact_applications'[is_adversarial_injection] = 1
+)
+
+[Security Threat Rate %] = 
+DIVIDE(
+    [Prompt Injection Attacks Neutralized],
+    [Total Applications],
+    0.0
+) * 100
+
+
+// ----------------------------------------------------------------------------
+// 4. HIRING VELOCITY & TIME-TO-FILL (TTF)
+// ----------------------------------------------------------------------------
+
+[Average Target Time-to-Fill Days] = 
+AVERAGE('fact_job_postings'[target_time_to_fill_days])
+
+[Average Actual Time-to-Fill Days] = 
+AVERAGE('fact_job_postings'[actual_time_to_fill_days])
+
+[Time-to-Fill Variance Days] = 
+[Average Actual Time-to-Fill Days] - [Average Target Time-to-Fill Days]
+
+[Hiring SLA Compliance %] = 
+VAR MetSLA = CALCULATE(
+    COUNTROWS('fact_job_postings'),
+    'fact_job_postings'[actual_time_to_fill_days] <= 'fact_job_postings'[target_time_to_fill_days]
+)
+RETURN
+DIVIDE(MetSLA, COUNTROWS('fact_job_postings'), 0.0) * 100
+
+
+// ----------------------------------------------------------------------------
+// 5. COST & FINANCIAL EFFICIENCY
+// ----------------------------------------------------------------------------
+
+[Total Recruitment Channel Sourcing Cost USD] = 
+SUMX(
+    'fact_applications',
+    RELATED('dim_channels'[cost_per_posting])
+)
+
+[Cost-per-Hire USD] = 
+DIVIDE(
+    [Total Recruitment Channel Sourcing Cost USD],
+    [Total Successful Hires],
+    0.0
+)
+
+[Average Offered Salary USD] = 
+AVERAGE('fact_job_postings'[base_salary_max])
+
+[Average Candidate Salary Expectation USD] = 
+AVERAGE('fact_applications'[candidate_salary_expectation])

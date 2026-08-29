@@ -14,12 +14,20 @@ import time
 import pandas as pd
 
 # Add root project path to sys.path for robust imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 
-from src.data_generator import TalentDataGenerator
-from src.dimensional_model import DimensionalModelPipeline
-from src.excel_builder import ExecutiveExcelBuilder
-from src.ai.recruiter_copilot import AIRecruiterCopilot
+try:
+    from src.data_generator import TalentDataGenerator
+    from src.dimensional_model import DimensionalModelPipeline
+    from src.excel_builder import ExecutiveExcelBuilder
+    from src.ai.recruiter_copilot import AIRecruiterCopilot
+except ImportError:
+    from data_generator import TalentDataGenerator
+    from dimensional_model import DimensionalModelPipeline
+    from excel_builder import ExecutiveExcelBuilder
+    from ai.recruiter_copilot import AIRecruiterCopilot
 
 
 def export_web_dashboard_payload(results: dict, output_path: str = "web/data/dashboard_data.json"):

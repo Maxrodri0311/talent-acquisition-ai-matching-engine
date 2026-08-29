@@ -1,10 +1,21 @@
-name: Talent Acquisition Engine CI
+name: Talent Acquisition Engine CI & Pages Deploy
 
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   test-and-validate:
@@ -29,9 +40,36 @@ jobs:
           pip install -r requirements.txt
 
       - name: Execute End-to-End Analytics Pipeline
+        env:
+          PYTHONPATH: .
         run: |
-          python src/main.py --applications 5000 --postings 200
+          python src/main.py --applications 5000 --postings 200 --candidates 2500
 
       - name: Run Pytest Verification Suite
+        env:
+          PYTHONPATH: .
         run: |
-          pytest tests/ -v --tb=short
+          python -m pytest tests/ -v --tb=short
+
+  deploy-pages:
+    needs: test-and-validate
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Web Dashboard Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'web'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

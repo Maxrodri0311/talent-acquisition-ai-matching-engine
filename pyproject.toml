@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "talent-acquisition-ai-engine"
+version = "1.0.0"
+description = "Enterprise Talent Acquisition AI Engine & Funnel Intelligence Platform with Zero-Trust Security, Kimball Star Schema, and DAX Semantic Layer"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Maximiliano Rodriguez", email = "maxirodriguez.dev@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Office/Business :: Financial :: Point-Of-Sale",
+]
+dependencies = [
+    "duckdb>=0.10.0",
+    "pandas>=2.1.0",
+    "numpy>=1.26.0",
+    "pyarrow>=14.0.0",
+    "scikit-learn>=1.3.0",
+    "openpyxl>=3.1.2",
+    "xlsxwriter>=3.1.9",
+    "pydantic>=2.5.0",
+    "tabulate>=0.9.0",
+    "tenacity>=8.2.3",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

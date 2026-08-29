@@ -1,0 +1,115 @@
+{
+  "kpis": {
+    "total_applications": 10000,
+    "passed_triage": 556,
+    "interviews": 120,
+    "offers": 0,
+    "hires": 0
+  },
+  "funnel": [
+    {
+      "stage": "1. Total Applications",
+      "count": 10000,
+      "conversion": 100.0
+    },
+    {
+      "stage": "2. Qualified for Review (Triage Passed)",
+      "count": 556,
+      "conversion": 5.56
+    },
+    {
+      "stage": "3. Technical Interviews Conducted",
+      "count": 120,
+      "conversion": 21.58
+    },
+    {
+      "stage": "4. Job Offers Extended",
+      "count": 0,
+      "conversion": 0.0
+    },
+    {
+      "stage": "5. Placements / Final Hires",
+      "count": 0,
+      "conversion": NaN
+    }
+  ],
+  "channels": [
+    {
+      "name": "GitHub Jobs / Direct Outreach",
+      "hires": 0
+    },
+    {
+      "name": "Indeed Featured",
+      "hires": 0
+    },
+    {
+      "name": "Apply on Job Direct",
+      "hires": 0
+    },
+    {
+      "name": "LinkedIn Job Slots",
+      "hires": 0
+    },
+    {
+      "name": "Tech Community Referral",
+      "hires": 0
+    }
+  ],
+  "candidates": [
+    {
+      "id": "CAND-004812",
+      "token": "TOKEN-ANON-89421",
+      "role": "Senior Data Scientist",
+      "exp": "6 Years",
+      "match_score": 91.5,
+      "category": "DIRECT_APPLICABLE",
+      "summary": "Candidate exhibits a 91.5% composite fit with core competencies in Python, SQL, and DuckDB. Experience exceeds target.",
+      "question": "How would you architect an in-memory OLAP pipeline using DuckDB to process 50k events without saturating L3 cache?",
+      "feedback": "Strong algorithmic match; recommend expanding practical exposure to distributed Kafka event streaming."
+    },
+    {
+      "id": "CAND-001205",
+      "token": "TOKEN-ANON-34902",
+      "role": "Lead AI / ML Solutions Architect",
+      "exp": "9 Years",
+      "match_score": 86.0,
+      "category": "DIRECT_APPLICABLE",
+      "summary": "Exceptional architecture background with PyTorch, LLMs, and Kubernetes orchestration.",
+      "question": "Describe your strategy for deploying quantized ONNX models in edge gateways with <20ms p99 latency.",
+      "feedback": "Strong architectural mastery; recommended for direct hiring committee interview."
+    },
+    {
+      "id": "CAND-008931",
+      "token": "TOKEN-ANON-12940",
+      "role": "Data Analyst / Analytics Engineer",
+      "exp": "14 Years",
+      "match_score": 72.4,
+      "category": "HUMAN_REVIEW_FLAGGED",
+      "summary": "Overqualification flag: 14 years experience applying for Mid-Level role; potential salary expectation mismatch.",
+      "question": "What motivations lead you to target this individual contributor role given your extensive senior background?",
+      "feedback": "Profile exceeds seniority baseline; recruiter should verify salary alignment and scope expectations."
+    },
+    {
+      "id": "CAND-003310",
+      "token": "TOKEN-ANON-59123",
+      "role": "BI & Decision Intelligence Specialist",
+      "exp": "4 Years",
+      "match_score": 64.8,
+      "category": "HUMAN_REVIEW_FLAGGED",
+      "summary": "Borderline fit: High Power BI and SQL skills, but missing required experience in Snowflake and dbt.",
+      "question": "How have you modeled dimensional star schemas in VertiPaq when source data lacked pre-aggregated marts?",
+      "feedback": "Solid BI foundation; building hands-on dbt semantic projects will solidify senior eligibility."
+    },
+    {
+      "id": "CAND-009104",
+      "token": "TOKEN-ANON-77821",
+      "role": "Junior Data Engineer",
+      "exp": "0 Years",
+      "match_score": 41.2,
+      "category": "AUTO_REJECT",
+      "summary": "Low fit: Missing required foundational experience in Python ETL and Docker containerization.",
+      "question": "N/A - Candidate auto-disqualified prior to recruiter screening.",
+      "feedback": "Thank you for applying. We encourage completing foundational projects in Python and Git to qualify for future cycles."
+    }
+  ]
+}

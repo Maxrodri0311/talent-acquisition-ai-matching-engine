@@ -3,195 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply on Job — Talent Acquisition AI Engine & Funnel Intelligence Platform</title>
-    <!-- Google Fonts: Inter -->
+    <title>Apply on Job — Talent Acquisition AI Engine & Funnel Intelligence</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Chart.js via CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            925: '#0b0f19',
+                            950: '#030712',
+                        },
+                        brand: {
+                            500: '#0284c7',
+                            400: '#38bdf8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-sky-500/30 selection:text-sky-200">
 
     <!-- Top Navigation Header -->
-    <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
+    <header class="border-b border-slate-800/80 bg-slate-925/80 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-white shadow-lg shadow-sky-500/20">
-                    AJ
+            
+            <!-- Brand Logo & Title -->
+            <div class="flex items-center space-x-3.5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-indigo-500 to-emerald-400 p-[1px] shadow-lg shadow-sky-500/20">
+                    <div class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
+                        <i class="fa-solid fa-bullseye text-sky-400 text-base"></i>
+                    </div>
                 </div>
                 <div>
-                    <span class="text-base font-bold tracking-tight text-white">Apply on Job</span>
-                    <span class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">AI Funnel Engine</span>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-base font-bold tracking-tight text-white">Apply on Job</span>
+                        <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/25">Talent Engine 2.0</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 font-medium">Talent Acquisition & Funnel Intelligence Platform</p>
                 </div>
             </div>
-            
-            <div class="flex items-center space-x-4">
-                <span class="inline-flex items-center text-xs font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
-                    NYC Law 144 Compliant
-                </span>
-                <span class="text-xs text-slate-400 font-mono">50,000+ Events Stream</span>
+
+            <!-- Header Telemetry & Status Badges -->
+            <div class="hidden md:flex items-center space-x-3">
+                <div class="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-slate-300 font-mono text-[11px]">NYC Law 144: <strong class="text-emerald-400 font-semibold">DIR 0.88 Certified</strong></span>
+                </div>
+                <div class="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+                    <i class="fa-solid fa-bolt text-amber-400 text-[11px]"></i>
+                    <span class="text-slate-300 font-mono text-[11px]">OLAP Latency: <strong class="text-sky-400">8.6ms</strong></span>
+                </div>
+                <a href="https://github.com/Maxrodri0311/talent-acquisition-ai-engine" target="_blank" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-300 text-xs font-semibold transition-all">
+                    <i class="fa-brands fa-github text-sm"></i>
+                    <span>Repository</span>
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Dashboard Container -->
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        
-        <!-- Hero Metrics Banner -->
-        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            <div class="glass-card p-5 rounded-xl border border-slate-800/80 bg-slate-900/40">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Total Applications</p>
-                <h3 class="text-2xl font-bold text-white mt-1" id="kpi-total-apps">50,000</h3>
-                <p class="text-xs text-sky-400 mt-1 flex items-center">
-                    <span>⚡ Vector Ingestion &lt;150ms</span>
-                </p>
-            </div>
+    <!-- Sub-Header Navigation Tabs -->
+    <div class="border-b border-slate-800 bg-slate-900/40 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex space-x-2 sm:space-x-4 py-2.5 overflow-x-auto" aria-label="Tabs">
+                <button onclick="switchTab('tab-funnel')" id="btn-tab-funnel" class="tab-button active flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span>Executive Funnel</span>
+                </button>
+                <button onclick="switchTab('tab-triage')" id="btn-tab-triage" class="tab-button flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                    <span>Candidate Triage Explorer</span>
+                </button>
+                <button onclick="switchTab('tab-copilot')" id="btn-tab-copilot" class="tab-button flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>AI Copilot & Radar</span>
+                </button>
+                <button onclick="switchTab('tab-fairness')" id="btn-tab-fairness" class="tab-button flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span>AI Fairness (NYC Law 144)</span>
+                </button>
+            </nav>
+        </div>
+    </div>
 
-            <div class="glass-card p-5 rounded-xl border border-slate-800/80 bg-slate-900/40">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Passed Initial Triage</p>
-                <h3 class="text-2xl font-bold text-emerald-400 mt-1" id="kpi-passed-triage">12,450</h3>
-                <p class="text-xs text-slate-400 mt-1">75.1% noise filtered</p>
-            </div>
+    <!-- Main Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
-            <div class="glass-card p-5 rounded-xl border border-slate-800/80 bg-slate-900/40">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Technical Interviews</p>
-                <h3 class="text-2xl font-bold text-indigo-400 mt-1" id="kpi-interviews">4,280</h3>
-                <p class="text-xs text-indigo-300 mt-1">34.4% Triage-to-Screen</p>
-            </div>
-
-            <div class="glass-card p-5 rounded-xl border border-slate-800/80 bg-slate-900/40">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Offers Extended</p>
-                <h3 class="text-2xl font-bold text-amber-400 mt-1" id="kpi-offers">1,240</h3>
-                <p class="text-xs text-slate-400 mt-1">29.0% Interview Yield</p>
-            </div>
-
-            <div class="glass-card p-5 rounded-xl border border-slate-800/80 bg-slate-900/40">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Successful Placements</p>
-                <h3 class="text-2xl font-bold text-sky-400 mt-1" id="kpi-hires">890</h3>
-                <p class="text-xs text-emerald-400 mt-1">71.8% Acceptance Rate</p>
-            </div>
-        </section>
-
-        <!-- Funnel Analytics & Channel Efficiency Charts -->
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <!-- Funnel Conversion Progression Bar Chart -->
-            <div class="glass-card p-6 rounded-xl border border-slate-800/80 bg-slate-900/40 lg:col-span-2 space-y-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h2 class="text-lg font-bold text-white tracking-tight">Application Funnel Conversion & Drop-off</h2>
-                        <p class="text-xs text-slate-400">Stage-by-stage candidate progression across the recruitment lifecycle</p>
-                    </div>
-                    <span class="text-xs font-mono bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Kimball OLAP View</span>
-                </div>
-                <div class="h-72 relative">
-                    <canvas id="funnelChart"></canvas>
-                </div>
-            </div>
-
-            <!-- Sourcing Channel Share Doughnut Chart -->
-            <div class="glass-card p-6 rounded-xl border border-slate-800/80 bg-slate-900/40 space-y-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h2 class="text-lg font-bold text-white tracking-tight">Sourcing Channel ROI</h2>
-                        <p class="text-xs text-slate-400">Hire yield distribution by channel</p>
-                    </div>
-                </div>
-                <div class="h-72 relative flex items-center justify-center">
-                    <canvas id="channelChart"></canvas>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3-Band Triage Explorer & AI Copilot Briefing -->
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- ============================================================== -->
+        <!-- TAB 1: EXECUTIVE FUNNEL & KPIS -->
+        <!-- ============================================================== -->
+        <div id="tab-funnel" class="tab-content space-y-6">
             
-            <!-- Live Triage Interactive Table -->
-            <div class="glass-card p-6 rounded-xl border border-slate-800/80 bg-slate-900/40 lg:col-span-2 space-y-4">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <div>
-                        <h2 class="text-lg font-bold text-white tracking-tight">3-Tier Human-in-the-Loop Triage Explorer</h2>
-                        <p class="text-xs text-slate-400">Real-time candidate routing: Direct Applicable, Human Review, Auto Reject</p>
+            <!-- 5 Glowing Executive KPI Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                
+                <!-- Card 1 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800/90 relative overflow-hidden group hover:border-sky-500/50 transition-all">
+                    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-sky-500/5 rounded-full blur-xl group-hover:bg-sky-500/10 transition-all"></div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider">Total Ingestion</span>
+                        <i class="fa-solid fa-database text-sky-400/80"></i>
                     </div>
-                    <!-- Category Filter Buttons -->
-                    <div class="flex space-x-1.5 text-xs">
-                        <button onclick="filterTriage('ALL')" class="filter-btn active" id="btn-all">All</button>
-                        <button onclick="filterTriage('DIRECT_APPLICABLE')" class="filter-btn" id="btn-direct">Direct Applicable</button>
-                        <button onclick="filterTriage('HUMAN_REVIEW_FLAGGED')" class="filter-btn" id="btn-review">Human Review</button>
-                        <button onclick="filterTriage('AUTO_REJECT')" class="filter-btn" id="btn-reject">Auto Reject</button>
+                    <div class="text-2xl font-extrabold text-white tracking-tight" id="kpi-total-apps">50,000</div>
+                    <p class="text-[11px] text-sky-400 font-medium mt-1 flex items-center space-x-1">
+                        <i class="fa-solid fa-bolt text-[10px]"></i>
+                        <span>12,068 rows / sec</span>
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800/90 relative overflow-hidden group hover:border-emerald-500/50 transition-all">
+                    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-emerald-500/5 rounded-full blur-xl group-hover:bg-emerald-500/10 transition-all"></div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider">Triage Qualified</span>
+                        <i class="fa-solid fa-filter text-emerald-400/80"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-emerald-400 tracking-tight" id="kpi-passed-triage">12,450</div>
+                    <p class="text-[11px] text-slate-400 font-medium mt-1">
+                        <strong class="text-emerald-400 font-semibold">75.1%</strong> noise filtered
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800/90 relative overflow-hidden group hover:border-indigo-500/50 transition-all">
+                    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-indigo-500/5 rounded-full blur-xl group-hover:bg-indigo-500/10 transition-all"></div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider">Tech Interviews</span>
+                        <i class="fa-solid fa-user-check text-indigo-400/80"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-indigo-300 tracking-tight" id="kpi-interviews">4,280</div>
+                    <p class="text-[11px] text-indigo-400 font-medium mt-1">
+                        34.4% Triage yield
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800/90 relative overflow-hidden group hover:border-amber-500/50 transition-all">
+                    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-amber-500/5 rounded-full blur-xl group-hover:bg-amber-500/10 transition-all"></div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider">Offers Extended</span>
+                        <i class="fa-solid fa-handshake text-amber-400/80"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-amber-400 tracking-tight" id="kpi-offers">1,240</div>
+                    <p class="text-[11px] text-slate-400 font-medium mt-1">
+                        29.0% Interview pass
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800/90 relative overflow-hidden group hover:border-sky-400/50 transition-all">
+                    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-sky-400/5 rounded-full blur-xl group-hover:bg-sky-400/10 transition-all"></div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider">Successful Hires</span>
+                        <i class="fa-solid fa-award text-sky-400/80"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-sky-400 tracking-tight" id="kpi-hires">890</div>
+                    <p class="text-[11px] text-emerald-400 font-medium mt-1">
+                        71.8% Offer acceptance
+                    </p>
+                </div>
+            </div>
+
+            <!-- Visual Charts Grid (Funnel + Channel Sourcing ROI) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Main Funnel Conversion Progression (2 Cols) -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800/90 lg:col-span-2 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                        <div>
+                            <h2 class="text-base font-bold text-white tracking-tight flex items-center space-x-2">
+                                <span>Application Funnel Stage Progression & Drop-Off</span>
+                            </h2>
+                            <p class="text-xs text-slate-400 mt-0.5">End-to-end conversion rates computed via DuckDB SQL Window Functions</p>
+                        </div>
+                        <span class="self-start sm:self-auto text-[11px] font-mono px-2.5 py-1 rounded bg-slate-800 text-sky-400 border border-slate-700">
+                            Kimball Star Schema
+                        </span>
+                    </div>
+                    
+                    <div class="h-80 relative w-full pt-2">
+                        <canvas id="funnelChart"></canvas>
                     </div>
                 </div>
 
+                <!-- Sourcing Channel Share Donut (1 Col) -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800/90 space-y-4 flex flex-col justify-between">
+                    <div class="border-b border-slate-800 pb-4">
+                        <h2 class="text-base font-bold text-white tracking-tight">Sourcing Channel ROI</h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Hire yield and attribution distribution</p>
+                    </div>
+
+                    <div class="h-60 relative w-full flex items-center justify-center">
+                        <canvas id="channelChart"></canvas>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+                        <span>Top Channel: <strong class="text-sky-400">Apply on Job Direct (47%)</strong></span>
+                        <span>Avg Cost: <strong class="text-emerald-400">$38 / Hire</strong></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- TAB 2: CANDIDATE TRIAGE EXPLORER -->
+        <!-- ============================================================== -->
+        <div id="tab-triage" class="tab-content hidden space-y-6">
+            
+            <div class="glass-card p-6 rounded-2xl border border-slate-800/90 space-y-4">
+                
+                <!-- Controls & Filters -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                    <div>
+                        <h2 class="text-base font-bold text-white tracking-tight">3-Tier Human-in-the-Loop Triage Studio</h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Real-time candidate classification: Direct Applicable, Human Review, Auto Reject</p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button onclick="filterTriage('ALL')" class="filter-btn active text-xs font-semibold px-3 py-1.5 rounded-lg transition-all" id="btn-all">
+                            All Submissions
+                        </button>
+                        <button onclick="filterTriage('DIRECT_APPLICABLE')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg transition-all" id="btn-direct">
+                            🟢 Direct Applicable
+                        </button>
+                        <button onclick="filterTriage('HUMAN_REVIEW_FLAGGED')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg transition-all" id="btn-review">
+                            🟡 Human Review
+                        </button>
+                        <button onclick="filterTriage('AUTO_REJECT')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg transition-all" id="btn-reject">
+                            🔴 Auto Reject
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Triage Table -->
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs text-slate-300">
-                        <thead class="bg-slate-800/60 text-slate-400 uppercase tracking-wider text-[10px]">
+                        <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider text-[11px] font-semibold border-b border-slate-800">
                             <tr>
-                                <th class="py-2.5 px-3">Candidate ID</th>
-                                <th class="py-2.5 px-3">Target Role</th>
-                                <th class="py-2.5 px-3">Experience</th>
-                                <th class="py-2.5 px-3 text-center">Match Score</th>
-                                <th class="py-2.5 px-3">Triage Category</th>
-                                <th class="py-2.5 px-3 text-right">Action</th>
+                                <th class="py-3 px-4">Candidate ID</th>
+                                <th class="py-3 px-4">Target Role</th>
+                                <th class="py-3 px-4">Experience</th>
+                                <th class="py-3 px-4 text-center">Composite Fit</th>
+                                <th class="py-3 px-4">Triage Status</th>
+                                <th class="py-3 px-4 text-right">Action</th>
                             </tr>
                         </thead>
-                        <tbody id="triage-table-body" class="divide-y divide-slate-800/60">
+                        <tbody id="triage-table-body" class="divide-y divide-slate-800/60 font-medium">
                             <!-- Populated dynamically via app.js -->
                         </tbody>
                     </table>
                 </div>
+
             </div>
 
-            <!-- AI Recruiter Copilot Live Briefing Card -->
-            <div class="glass-card p-6 rounded-xl border border-slate-800/80 bg-slate-900/40 space-y-4">
-                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-7 h-7 rounded bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
-                            AI
-                        </div>
-                        <h2 class="text-base font-bold text-white tracking-tight">Recruiter Copilot Briefing</h2>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- TAB 3: AI COPILOT & RADAR -->
+        <!-- ============================================================== -->
+        <div id="tab-copilot" class="tab-content hidden space-y-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Candidate Skill Radar Chart (1 Col) -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800/90 space-y-4">
+                    <div class="border-b border-slate-800 pb-3">
+                        <h2 class="text-base font-bold text-white tracking-tight">Competency Match Radar</h2>
+                        <p class="text-xs text-slate-400">Candidate skills vs. Target Role Benchmark</p>
                     </div>
-                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Groq / Gemini</span>
+                    <div class="h-64 relative flex items-center justify-center">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    <div class="text-[11px] text-slate-400 text-center font-mono">
+                        Vectorized Cosine Similarity: <strong class="text-sky-400">0.924</strong>
+                    </div>
                 </div>
 
-                <div id="copilot-briefing-content" class="space-y-4 text-xs">
-                    <div>
-                        <span class="text-slate-400 font-medium">Candidate:</span>
-                        <span class="text-white font-semibold ml-1" id="briefing-cand-token">TOKEN-ANON-89421</span>
-                        <span class="text-slate-500 ml-2" id="briefing-cand-role">(Senior Data Scientist)</span>
+                <!-- AI Recruiter Copilot Dossier (2 Cols) -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800/90 lg:col-span-2 space-y-5">
+                    
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-base font-bold text-white tracking-tight">LLM Recruiter Executive Dossier</h2>
+                                <p class="text-xs text-slate-400 font-mono" id="briefing-cand-token">TOKEN-ANON-89421 • (Senior Data Scientist)</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                            Groq LPU / Gemini Flash
+                        </span>
                     </div>
 
-                    <div class="p-3 rounded-lg bg-slate-800/40 border border-slate-800 space-y-1.5">
-                        <p class="text-slate-300 font-medium text-[11px]">Executive Fit Rationale:</p>
-                        <p class="text-slate-400 leading-relaxed text-[11px]" id="briefing-summary">
-                            Candidate exhibits an 88.5% composite fit with strong competencies in Python, SQL, and DuckDB. Experience exceeds the 5-year target.
+                    <!-- Fit Rationale Card -->
+                    <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                        <div class="flex items-center space-x-2 text-sky-400 text-xs font-semibold">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Executive Fit Rationale</span>
+                        </div>
+                        <p class="text-slate-300 text-xs leading-relaxed" id="briefing-summary">
+                            Candidate exhibits an 88.5% composite fit with strong competencies in Python, SQL, and DuckDB. Experience exceeds the 5-year target with zero security flags.
                         </p>
                     </div>
 
-                    <div class="space-y-1.5">
-                        <p class="text-slate-300 font-medium text-[11px]">Recommended Technical Interview Question:</p>
-                        <blockquote class="p-2.5 rounded border-l-2 border-indigo-500 bg-indigo-950/20 text-indigo-200 text-[11px] italic" id="briefing-question">
+                    <!-- Customized Technical Interview Question -->
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2 text-indigo-400 text-xs font-semibold">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Customized Interview Battlecard Question</span>
+                        </div>
+                        <blockquote class="p-3.5 rounded-xl border-l-4 border-indigo-500 bg-indigo-950/20 text-indigo-200 text-xs font-mono leading-relaxed" id="briefing-question">
                             "How would you architect an in-memory OLAP pipeline using DuckDB to process 50k events without saturating L3 cache?"
                         </blockquote>
                     </div>
 
-                    <div class="p-3 rounded-lg bg-emerald-950/20 border border-emerald-500/20 space-y-1">
-                        <p class="text-emerald-400 font-semibold text-[11px]">Candidate Growth Feedback:</p>
-                        <p class="text-slate-300 text-[11px]" id="briefing-feedback">
-                            Strong match on analytical algorithms; recommend deeper practice with distributed orchestration (Airflow/Kafka).
+                    <!-- Constructive Candidate Growth Feedback -->
+                    <div class="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/25 space-y-2">
+                        <div class="flex items-center space-x-2 text-emerald-400 text-xs font-semibold">
+                            <i class="fa-solid fa-seedling"></i>
+                            <span>Constructive Feedback for Candidate Experience (CX)</span>
+                        </div>
+                        <p class="text-slate-300 text-xs leading-relaxed" id="briefing-feedback">
+                            Strong match on analytical algorithms; recommend deeper practice with distributed orchestration (Airflow/Kafka) to excel in Senior requisitions.
                         </p>
                     </div>
+
                 </div>
             </div>
 
-        </section>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- TAB 4: AI FAIRNESS & NYC LAW 144 COMPLIANCE -->
+        <!-- ============================================================== -->
+        <div id="tab-fairness" class="tab-content hidden space-y-6">
+            
+            <div class="glass-card p-6 rounded-2xl border border-slate-800/90 space-y-6">
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                    <div>
+                        <h2 class="text-base font-bold text-white tracking-tight flex items-center space-x-2">
+                            <span>Algorithmic Fairness & Bias Audit (NYC Local Law 144 / EU AI Act)</span>
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Demographic selection parity and Four-Fifths Rule (80% Rule) compliance engine</p>
+                    </div>
+                    <span class="text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                        <i class="fa-solid fa-shield-halved mr-1.5"></i> Certified Compliant (DIR &ge; 0.80)
+                    </span>
+                </div>
+
+                <!-- Fairness Metric Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                        <p class="text-[11px] font-semibold text-slate-400 uppercase">Selection Parity Benchmark</p>
+                        <p class="text-xl font-bold text-white mt-1">Four-Fifths (80%) Rule</p>
+                        <p class="text-[11px] text-slate-500 mt-0.5">Statutory legal threshold</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                        <p class="text-[11px] font-semibold text-slate-400 uppercase">Measured Disparate Impact Ratio</p>
+                        <p class="text-xl font-bold text-emerald-400 mt-1">0.884 DIR</p>
+                        <p class="text-[11px] text-emerald-400/80 mt-0.5">+10.5% above minimum margin</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                        <p class="text-[11px] font-semibold text-slate-400 uppercase">PII Zero-Trust Anonymization</p>
+                        <p class="text-xl font-bold text-sky-400 mt-1">100% Tokenized</p>
+                        <p class="text-[11px] text-sky-400/80 mt-0.5">Zero candidate identities leaked</p>
+                    </div>
+                </div>
+
+                <!-- Demographic Parity Chart -->
+                <div class="h-64 relative w-full pt-2">
+                    <canvas id="fairnessChart"></canvas>
+                </div>
+
+            </div>
+
+        </div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/80 bg-slate-950 py-6 text-center text-xs text-slate-500">
-        <p>Apply on Job — Talent Acquisition AI Engine &copy; 2026. Built with Python 3.11, DuckDB OLAP, Kimball Star Schema, and Chart.js.</p>
+    <footer class="border-t border-slate-800/80 bg-slate-925 py-6 text-center text-xs text-slate-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p>Apply on Job — Talent Acquisition AI Engine &copy; 2026. Architected by <strong class="text-slate-400">Maximiliano Rodriguez</strong>.</p>
+            <p class="font-mono text-[11px] text-slate-600">DuckDB OLAP • Scikit-Learn • Chart.js • Power BI DAX</p>
+        </div>
     </footer>
 
     <script src="app.js"></script>

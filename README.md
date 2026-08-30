@@ -3,16 +3,21 @@
 # 🎯 Talent Acquisition AI Engine & Funnel Intelligence Platform
 ### *Enterprise Two-Stage AI Matching, Zero-Trust Prompt Firewall & Kimball OLAP Star Schema*
 
-[![CI Pipeline](https://img.shields.io/badge/CI%20Pipeline-Passing-10B981?style=for-the-badge&logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
-[![Live Interactive Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0284C7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://Maxrodri0311.github.io/talent-acquisition-ai-engine/)
+<br/>
+
+[![CI Pipeline](https://img.shields.io/badge/CI_Pipeline-Passing-10B981?style=for-the-badge&logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
+[![Live Interactive Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-0284C7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://Maxrodri0311.github.io/talent-acquisition-ai-engine/)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![DuckDB OLAP](https://img.shields.io/badge/DuckDB-In--Memory%20OLAP-FFF000?style=for-the-badge&logo=duckdb&logoColor=black)](https://duckdb.org/)
-[![NYC Law 144](https://img.shields.io/badge/Compliance-NYC%20Law%20144%20%2F%20EU%20AI%20Act-818CF8?style=for-the-badge&logo=shield&logoColor=white)](#-algorithmic-fairness--bias-audit-nyc-law-144)
+
+[![DuckDB OLAP](https://img.shields.io/badge/DuckDB-In--Memory_OLAP-FFF000?style=for-the-badge&logo=duckdb&logoColor=black)](https://duckdb.org/)
+[![NYC Law 144](https://img.shields.io/badge/Compliance-NYC_Law_144-818CF8?style=for-the-badge&logo=shield&logoColor=white)](#-algorithmic-fairness--bias-audit-nyc-law-144)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 <br/>
 
-**[🌐 Launch Interactive Web Dashboard](https://Maxrodri0311.github.io/talent-acquisition-ai-engine/)** • **[📊 Power BI DAX Suite](bi_semantic/dax_measures.dax)** • **[🏛️ Pure SQL Star Schema](sql/schema_ddl.sql)** • **[🧪 Pytest Suite (16/16 Green)](tests/)**
+**[🌐 Launch Live Web Dashboard](https://Maxrodri0311.github.io/talent-acquisition-ai-engine/)** &nbsp;•&nbsp; **[📊 Power BI DAX Suite](bi_semantic/dax_measures.dax)** &nbsp;•&nbsp; **[🏛️ Pure SQL Star Schema](sql/schema_ddl.sql)** &nbsp;•&nbsp; **[🧪 Pytest Suite (16/16 Green)](tests/)**
+
+<br/>
 
 </div>
 

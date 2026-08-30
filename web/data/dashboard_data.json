@@ -2,7 +2,7 @@
   "kpis": {
     "total_applications": 10000,
     "passed_triage": 556,
-    "interviews": 120,
+    "interviews": 117,
     "offers": 0,
     "hires": 0
   },
@@ -19,8 +19,8 @@
     },
     {
       "stage": "3. Technical Interviews Conducted",
-      "count": 120,
-      "conversion": 21.58
+      "count": 117,
+      "conversion": 21.04
     },
     {
       "stage": "4. Job Offers Extended",

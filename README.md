@@ -218,6 +218,15 @@ Open `web/index.html` directly in any web browser or view live at:
 
 **Maximiliano Rodriguez**  
 *Data Analyst • Applied AI Engineer • Data Architect*  
-* [LinkedIn Profile](https://www.linkedin.com/in/maximiliano-rodriguez-data/)
-* [GitHub Portfolio](https://github.com/Maxrodri0311)
-* [Email Contact](mailto:maxirodriguez.dev@gmail.com)
+
+<br/>
+
+[![LinkedIn Profile](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maximiliano-rodriguez-982674375/)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Maxrodri0311)
+[![Email Contact](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:maxrodri0311@gmail.com)
+
+<br/>
+
+* 💼 **LinkedIn:** [maximiliano-rodriguez-982674375](https://www.linkedin.com/in/maximiliano-rodriguez-982674375/)
+* 🐙 **GitHub:** [Maxrodri0311](https://github.com/Maxrodri0311)
+* 📧 **Email:** `maxrodri0311@gmail.com`

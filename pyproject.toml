@@ -9,7 +9,7 @@ description = "Enterprise Talent Acquisition AI Engine & Funnel Intelligence Pla
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-    { name = "Maximiliano Rodriguez", email = "maxirodriguez.dev@gmail.com" }
+    { name = "Maximiliano Rodriguez", email = "maxrodri0311@gmail.com" }
 ]
 classifiers = [
     "Programming Language :: Python :: 3",

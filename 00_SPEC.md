@@ -4,7 +4,7 @@
 ========================================================================================
 PROJECT:          Talent Acquisition AI Engine & Funnel Intelligence Platform
 TARGET ROLE:      Senior Data Scientist / AI Solutions Architect
-TARGET DOMAIN:    HR-Tech, E-Recruitment, Candidate Matching & Funnel Analytics (Apply on Job)
+TARGET DOMAIN:    HR-Tech, E-Recruitment, Candidate Matching & Funnel Analytics (Global HRTech & Talent Practice)
 STACK:            Python 3.11+, DuckDB OLAP, Scikit-Learn, Groq Llama-3 / Gemini Flash,
                   Pure SQL (CTEs/Window Functions), Power BI DAX, JavaScript (Chart.js Web UI)
 TIMEBOX:          48 Hours Focused Engineering
@@ -15,8 +15,8 @@ TIMEBOX:          48 Hours Focused Engineering
 
 ## 1. Contexto de Negocio y Planteamiento del Dolor (The Business Problem)
 
-### 🏢 Contexto Corporativo (Apply on Job)
-*Apply on Job* opera como una plataforma inteligente de reclutamiento y agregación de vacantes laborales a gran escala, conectando a miles de empleadores corporativos con cientos de miles de postulantes activos en América Latina y mercados globales. La plataforma gestiona:
+### 🏢 Contexto Corporativo (Global HRTech & Talent Practice)
+*Global HRTech & Talent Practice* opera como una plataforma inteligente de reclutamiento y agregación de vacantes laborales a gran escala, conectando a miles de empleadores corporativos con cientos de miles de postulantes activos en América Latina y mercados globales. La plataforma gestiona:
 1. **Indexación y normalización de vacantes:** Requisitos técnicos, rango salarial, modalidad remota y nivel de seniority.
 2. **Matching y clasificación de candidatos:** Cálculo en tiempo real de afinidad técnica y ajuste al perfil.
 3. **Pipeline de selección (Application Funnel):** Transición de candidatos desde la postulación inicial hasta la entrevista técnica y la oferta final.

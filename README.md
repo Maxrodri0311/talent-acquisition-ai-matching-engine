@@ -25,7 +25,7 @@
 
 ## 🏛️ Executive Summary & Core Business Impact
 
-In large-scale digital recruitment ecosystems (*Apply on Job*), talent acquisition teams face overwhelming volumes of unqualified applicants—up to **75% of submissions fail core technical or experience thresholds**, causing severe recruiter burnout (>20 hours/week spent on repetitive screening) and increasing **Time-to-Fill (TTF)** for critical tech roles. Furthermore, sophisticated applicants frequently attempt **adversarial prompt injections** (hidden HTML tags, zero-width spaces, and system overrides) to manipulate automated ATS parsers.
+In large-scale digital recruitment ecosystems (*Global HRTech & Talent Practice*), talent acquisition teams face overwhelming volumes of unqualified applicants—up to **75% of submissions fail core technical or experience thresholds**, causing severe recruiter burnout (>20 hours/week spent on repetitive screening) and increasing **Time-to-Fill (TTF)** for critical tech roles. Furthermore, sophisticated applicants frequently attempt **adversarial prompt injections** (hidden HTML tags, zero-width spaces, and system overrides) to manipulate automated ATS parsers.
 
 This platform implements an **enterprise, production-grade talent acquisition and application funnel intelligence architecture**, combining:
 1. **High-Throughput Vectorized Matching:** Local in-memory math ($<0.09\text{ ms/row}$) evaluating hard skills (Jaccard Index), semantic TF-IDF cosine similarity, and seniority penalty functions.

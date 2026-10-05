@@ -142,7 +142,7 @@ class AIRecruiterCopilot:
                 "Content-Type": "application/json"
             }
             prompt = f"""
-            You are a Staff Technical Recruiter & AI Hiring Architect at Apply on Job.
+            You are a Staff Technical Recruiter & AI Hiring Architect at Global HRTech & Talent Practice.
             Analyze this candidate profile against the target job posting.
             
             Target Role: {role_title} (Job ID: {job_id})

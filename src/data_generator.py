@@ -40,7 +40,7 @@ EMPLOYERS_CATALOG = [
 ]
 
 CHANNELS_CATALOG = [
-    {"channel_id": "CHN-01", "channel_name": "Apply on Job Direct", "channel_type": "Organic Platform", "cost_per_posting": 0.0},
+    {"channel_id": "CHN-01", "channel_name": "Global HRTech & Talent Practice Direct", "channel_type": "Organic Platform", "cost_per_posting": 0.0},
     {"channel_id": "CHN-02", "channel_name": "LinkedIn Job Slots", "channel_type": "Premium Aggregator", "cost_per_posting": 120.0},
     {"channel_id": "CHN-03", "channel_name": "Indeed Featured", "channel_type": "PPC Network", "cost_per_posting": 85.0},
     {"channel_id": "CHN-04", "channel_name": "Tech Community Referral", "channel_type": "Employee Referral", "cost_per_posting": 45.0},

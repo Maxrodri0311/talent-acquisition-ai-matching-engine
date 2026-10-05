@@ -62,7 +62,7 @@ class ExecutiveExcelBuilder:
         # Header Title Banner
         ws_funnel.merge_cells("A1:F2")
         title_cell = ws_funnel["A1"]
-        title_cell.value = "  APPLY ON JOB — TALENT ACQUISITION EXECUTIVE KPI DASHBOARD"
+        title_cell.value = "  Global HRTech & Talent Practice — TALENT ACQUISITION EXECUTIVE KPI DASHBOARD"
         title_cell.font = font_title
         title_cell.fill = fill_navy
         title_cell.alignment = Alignment(vertical="center", horizontal="left")

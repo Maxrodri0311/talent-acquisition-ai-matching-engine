@@ -3,7 +3,7 @@ title Talent Acquisition AI Engine & Funnel Intelligence Platform
 color 0B
 
 echo ===============================================================================
-echo   APPLY ON JOB -- TALENT ACQUISITION AI ENGINE & FUNNEL INTELLIGENCE
+echo   Global HRTech & Talent Practice -- TALENT ACQUISITION AI ENGINE & FUNNEL INTELLIGENCE
 echo   Staff Data Science, Zero-Trust Security & Kimball Star Schema OLAP
 echo ===============================================================================
 echo.
